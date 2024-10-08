@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faire un Don</title>
+    <link rel="stylesheet" href="styles_don.css">
+</head>
+
+<body>
+    <div class="don-container">
+        <h1>Faire un Don</h1>
+        <form id="don-form" action="/submit_don" method="POST">
+            <!-- Informations Personnelles -->
+            <div class="form-group">
+                <label for="nom">Nom Complet:</label>
+                <input type="text" id="nom" name="nom" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Adresse Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="tel">Téléphone:</label>
+                <input type="tel" id="tel" name="tel" required>
+            </div>
+
+            <!-- Adresse -->
+            <div class="form-group">
+                <label for="adresse">Adresse:</label>
+                <input type="text" id="adresse" name="adresse" required>
+            </div>
+            <div class="form-group">
+                <label for="ville">Ville:</label>
+                <input type="text" id="ville" name="ville" required>
+            </div>
+            <div class="form-group">
+                <label for="code-postal">Code Postal:</label>
+                <input type="text" id="code-postal" name="code-postal" required>
+            </div>
+
+            <!-- Montant du Don -->
+            <div class="form-group">
+                <label for="montant">Montant du Don (en US):</label>
+                <input type="number" id="montant" name="montant" required min="1" step="any">
+            </div>
+
+            <div class="form-group">
+                <h1>Entrez votre photo</h1>
+    <!-- Champ de sélection d'image -->
+    <input type="file" id="fileInput" accept="image/*">
+    
+    <!-- Prévisualisation de l'image sélectionnée -->
+    <div class="image-preview" id="imagePreview">
+        Aucun fichier sélectionné
+    </div>
+
+    <script>
+        // Sélectionner les éléments HTML
+        const fileInput = document.getElementById('fileInput');
+        const imagePreview = document.getElementById('imagePreview');
+
+        // Ajouter un écouteur d'événement pour le changement de fichier
+        fileInput.addEventListener('change', function(event) {
+            const file = event.target.files[0]; // Récupérer le fichier sélectionné
+
+            // Si un fichier est sélectionné et que c'est une image
+            if (file && file.type.startsWith('image/')) {
+                const reader = new FileReader(); // Utiliser FileReader pour lire l'image
+
+                reader.onload = function(e) {
+                    // Créer un élément image et l'afficher dans la zone de prévisualisation
+                    imagePreview.innerHTML = `<img src="${e.target.result}" alt="Image Preview">`;
+                };
+
+                reader.readAsDataURL(file); // Lire le fichier sous forme de Data URL
+            } else {
+                // Si aucun fichier ou mauvais type de fichier est sélectionné
+                imagePreview.innerHTML = "Aucun fichier sélectionné ou fichier invalide.";
+            }
+        });
+    </script>
+
+            </div>
+
+            <!-- Choix du Système de Paiement -->
+            <div class="form-group">
+                <label for="paiement">Choisissez votre système de paiement:</label>
+                <select id="paiement" name="paiement" required>
+                    <option value="">Sélectionner...</option>
+                    <option value="paypal">PayPal</option>
+                    <option value="stripe">Carte Bancaire (Stripe)</option>
+                    <option value="mobile-money">Mobile Money</option>
+                    <option value="Coris Money">Coris Money</option>
+                    <option value="Orange Money">Orange Money</option>
+                </select>
+            </div>
+
+            <!-- Bouton de Soumission -->
+            <div class="form-group">
+                <button type="submit" class="btn-submit">Faire un Don</button>
+            </div>
+        </form>
+    </div>
+
+    <script src="scripts_don.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,257 @@
+/* Styles généraux */
+body {
+    transition: 3s;
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    color: #333;
+    background-color: #f4f4f9;
+}
+
+.cta-btn {
+    background-color: #ffffff;
+    position: relative;
+    color: rgb(0, 0, 0);
+    padding: 15px 30px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: background-color 0.4s ease;
+}
+
+.cta-btn:hover {
+    background-color: #e64a19;
+}
+
+.cta-btn:focus {
+    outline: 2px solid #e64a19;
+    outline-offset: 2px;
+}
+
+.overlay {
+    pointer-events: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
+}
+
+/* Section Héroïque */
+.hero-section {
+    position: relative;
+    height: 100vh;
+    background-image: url('images (1).jpeg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    z-index: 1;
+}
+
+nav {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+nav ul li a:focus {
+    outline: 2px solid white;
+    outline-offset: 2px;
+}
+
+/* Mobile adjustments for the nav menu */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    color:#ffffff;
+    position: relative;
+    z-index: 10;
+}
+
+.hero-content p {
+    font-size: 1.5rem;
+    margin-bottom: 40px;
+    color:#ffffff;
+    position: relative;
+}
+
+/* Section pour l'image et le nom */
+.personal-info {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.profile-image {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.name, .position {
+    font-size: 1.2rem;
+    color: #fff;
+}
+
+/* Message défilant */
+.message-defilant {
+    background-color: #0055a5;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+    margin-top: 20px;
+    overflow: hidden;
+}
+
+.message-defilant p {
+    white-space: nowrap;
+    animation: scroll-left 25s linear infinite;
+}
+
+@keyframes scroll-left {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+/* Carrousel de photos */
+.photo-carousel {
+    width: 100%;
+    overflow: hidden;
+    margin: 20px 0;
+    text-align: center;
+}
+
+.carousel-track {
+    display: flex;
+    animation: slide 20s infinite linear;
+}
+
+.carousel-track img {
+    width: 20%;
+    height: auto;
+}
+
+@keyframes slide {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+/* Section About */
+.about {
+    padding: 50px;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+.about h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.about p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+}
+
+/* Section Contributions */
+.contributions {
+    background-color: #fff;
+    padding: 50px;
+    text-align: center;
+}
+
+.contributions h2 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+}
+
+.contributions-grid {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.contribution-tier {
+    background-color: #f4f4f4;
+    padding: 20px;
+    border-radius: 10px;
+    width: 250px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.contribution-tier h3 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.contribution-tier p {
+    font-size: 1.2rem;
+}
+
+/* Section Testimonials */
+.testimonial {
+    padding: 50px;
+    background-color: #e2e2e2;
+    text-align: center;
+}
+
+.testimonial h2 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+}
+
+.testimonial p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    font-size: 0.9rem;
+}

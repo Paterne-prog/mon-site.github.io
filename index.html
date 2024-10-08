@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fonds Patriotique de la Diaspora Burkinabè</title>
+    <link rel="stylesheet" href="Acceuil.css">
+</head>
+<body>
+    <header class="hero-section">
+        <div class="overlay"></div>
+        <nav>
+            <ul class="menu">
+                <li><a href="#">Accueil</a></li>
+                <li><a href="Présentation1.html">À propos</a></li>
+                <li><a href="#">Contributions</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="hero-content">
+            <h1>Fonds Patriotique de la Diaspora Burkinabè</h1>
+            <p>Unissons nos efforts pour renforcer la sécurité du Burkina Faso.</p>
+            <a href="Pay.html" class="cta-btn">Faire un Don</a>
+        </div>
+        <!-- Espace pour image, nom, prénom et fonction -->
+        <div class="personal-info">
+            <img src="téléchargement.jpeg" alt="Image de profil" class="profile-image">
+            <p class="name">Nom : John Doe</p>
+            <p class="position">Fonction : Membre actif</p>
+        </div>
+    </header>
+
+    <!-- Message défilant -->
+    <section class="message-defilant">
+        <p>DIASPORA BURKINABE ET AMI(E), CONTRIBUONS TOUS ENSEMBLE AU MINIMUM 1$ US PAR MOIS POUR BOOSTER LE TERRORISME HORS DE NOS FRONTIÈRES ET DANS LA ZONE AES. LA PATRIE OU LA MORT NOUS VAINCRONS.</p>
+    </section>
+
+    <!-- Carrousel de photos -->
+    <section class="photo-carousel">
+        <div class="carousel-track">
+            <img src="téléchargement.jpeg" alt="Photo 1">
+            <img src="éléchargement.jpeg" alt="Photo 2">
+            <img src="photo3.jpg" alt="Photo 3">
+            <img src="photo4.jpg" alt="Photo 4">
+            <img src="photo5.jpg" alt="Photo 5">
+            <img src="photo6.jpg" alt="Photo 6">
+            <img src="photo7.jpg" alt="Photo 7">
+            <img src="photo8.jpg" alt="Photo 8">
+        </div>
+    </section>
+
+    <section class="about">
+        <h2>Notre Vision</h2>
+        <p>
+            Le Fonds Patriotique de la Diaspora Burkinabè est une initiative visant à mobiliser les ressources de la diaspora et leurs ami(e)s pour lutter contre le terrorisme au Burkina Faso. En soutenant des projets essentiels, nous renforçons la sécurité et la résilience de nos communautés.
+        </p>
+    </section>
+
+    <section class="contributions">
+        <h2>Reconnaissance des Contributeurs</h2>
+        <div class="contributions-grid">
+            <div class="contribution-tier">
+                <h3>1 000$</h3>
+                <p>Attestation en Bronze</p>
+            </div>
+            <div class="contribution-tier">
+                <h3>2 000$</h3>
+                <p>Attestation en Argent</p>
+            </div>
+            <div class="contribution-tier">
+                <h3>5 000$</h3>
+                <p>Attestation en Or</p>
+            </div>
+            <div class="contribution-tier">
+                <h3>10 000$</h3>
+                <p>Attestation en Diamant <br> <br>Chaque tranche supplémentaire de 10 000 dollars : Ajout d'une attestation en diamant +1</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonial">
+        <h2>Ce qu'ils disent</h2>
+        <p>"C'est une belle initiative de la part de ces jeunes de vouloir soutenir leur pays et de montrer leur patriotisme. En confiant la gestion du fonds à l'État burkinabè, ils peuvent garantir que les ressources seront utilisées de manière efficace pour lutter contre le terrorisme, aider les personnes en difficulté et financer des projets dans les zones les plus affectées. Cela pourrait contribuer à renforcer la résilience des communautés touchées et à promouvoir le développement socio-économique. Il serait aussi essentiel d'assurer une transparence dans la gestion de ces fonds afin de renforcer la confiance de la population et d'encourager d'autres initiatives similaires."</p>
+        <p>- Adama Zerbo, PDG de BF Techno Distribution</p>
+    </section>
+
+    <footer>
+        <p>© 2024 Fonds Patriotique de la Diaspora Burkinabè. Tous droits réservés.</p>
+    </footer>
+
+    <script>
+        // Fonction pour ajouter la classe 'visible' lorsque l'élément est dans le viewport
+        function handleScroll() {
+            const elements = document.querySelectorAll('.about, .contributions, .testimonial, footer');
+            elements.forEach((el) => {
+                const rect = el.getBoundingClientRect();
+                if (rect.top < window.innerHeight && rect.bottom >= 0) {
+                    el.classList.add('visible');
+                }
+            });
+        }
+    
+        // Exécuter la fonction lors du scroll
+        window.addEventListener('scroll', handleScroll);
+    
+        // Exécuter la fonction à la première ouverture de la page
+        window.addEventListener('load', handleScroll);
+    </script>
+</body>
+</html>
